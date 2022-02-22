@@ -19,7 +19,7 @@ if __name__ == '__main__':
 	print('yaw: %.2f' %rot[0])
 	
 	#calculate total homogenous transformation
-	b = robot_model.kinematic_chain([[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]])
+	b = robot_model.kinematic_chain([[0,0,0.1625,(np.pi)/2],[0,-0.425,0,0],[0,-0.3922,0,0],[0,0,0.1333,(np.pi)/2],[0,0,0.0997,-(np.pi)/2],[0,0,0.0996,0]])
 	#calculate x,y,z components of position
 	pos = robot_model.get_pos(b)
 	#calculate roll-pitch-yaw angles
@@ -33,7 +33,7 @@ if __name__ == '__main__':
 	print('yaw: %.2f' %rot[0])
 	
 	#calculate total homogenous transformation
-	c = robot_model.kinematic_chain([[0,0,0,0],[-np.pi/2,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]])
+	c = robot_model.kinematic_chain([[0,0,0.1625,(np.pi)/2],[-(np.pi)/2,-0.425,0,0],[0,-0.3922,0,0],[0,0,0.1333,(np.pi)/2],[0,0,0.0997,-(np.pi)/2],[0,0,0.0996,0]])
 	#calculate x,y,z components of position
 	pos = robot_model.get_pos(c)
 	#calculate roll-pitch-yaw angles

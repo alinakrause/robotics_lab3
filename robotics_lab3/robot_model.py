@@ -28,9 +28,9 @@ def get_pos(trans):
 
 def get_rot(trans):
 	#returns pitch roll yaw values 
-	phi = np.arctan(trans[1][0]/trans[0][0])
-	theta = np.arctan((-1*trans[2][0])/(np.sqrt((trans[2][1]*trans[2][1])+(trans[2][2]*trans[2][2]))))
-	psi = np.arctan(trans[2][1]/trans[2][2])
+	phi = math.atan2(trans[1][0],trans[0][0])
+	theta = math.atan2((-1*trans[2][0]),(np.sqrt((trans[2][1]*trans[2][1])+(trans[2][2]*trans[2][2]))))
+	psi = math.atan2(trans[2][1],trans[2][2])
 	angles = [phi,theta,psi]
 	return angles
 		
